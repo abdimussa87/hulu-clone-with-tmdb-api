@@ -1,0 +1,6 @@
+.body > div {
+  /* !targeting the div inserted automatically by react flip move  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

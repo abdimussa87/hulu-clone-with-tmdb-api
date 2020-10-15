@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Body.css'
 import VideoCard from './VideoCard'
-function Body() {
+import axios from './axios';
+import FlipMove from 'react-flip-move';
+function Body({ selectedOption }) {
+    const [movies, setMovies] = useState([]);
+    useEffect(() => {
+        axios.get(selectedOption).then(response => {
+            setMovies(response.data.results);
+        });
+
+    }, [selectedOption])
     return (
         <div className='body'>
-            <VideoCard />
+            <FlipMove>
+                {
+                    movies.map(movie =>
+                        <VideoCard key={movie.id} movie={movie} />
+                    )}
+            </FlipMove>
         </div>
     )
 }
