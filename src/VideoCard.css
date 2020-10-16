@@ -1,8 +1,8 @@
 .videoCard {
   color: white;
-  width: 500px;
+  width: 360px;
   height: 430px;
-  padding: 20px;
+  padding: 0px 20px;
   cursor: pointer;
   transition: transform 100ms ease-out;
 }
@@ -10,7 +10,7 @@
   transform: scale(1.09);
 }
 .videoCard > img {
-  width: 500px;
+  width: 360px;
   object-fit: contain;
   height: 300px;
 }
